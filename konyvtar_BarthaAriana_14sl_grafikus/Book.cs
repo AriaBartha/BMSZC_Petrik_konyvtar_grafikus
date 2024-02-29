@@ -36,7 +36,7 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
 
         public override string ToString()
         {
-            return $"{this.author} {this.title}";
+            return $"{this.author} - {this.title}";
         }
     }
 }

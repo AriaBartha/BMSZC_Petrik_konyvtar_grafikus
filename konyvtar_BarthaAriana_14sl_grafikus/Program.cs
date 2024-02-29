@@ -8,15 +8,18 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
+        public static List<Book> books = new List<Book>();
+        public static Adatbazis adatok = null;
+        public static Form1 form1 = null;
+              
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            adatok = new Adatbazis();
+            books = adatok.getAllBooks();
+            form1 = new Form1();
+            Application.Run(form1);
         }
     }
 }

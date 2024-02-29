@@ -16,5 +16,14 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            listBoxBooks.Items.Clear();
+            foreach (Book item in Program.books)
+            {
+                listBoxBooks.Items.Add(item);
+            }
+        }
     }
 }
