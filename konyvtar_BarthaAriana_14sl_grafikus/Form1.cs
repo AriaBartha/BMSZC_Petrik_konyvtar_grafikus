@@ -25,5 +25,25 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
                 listBoxBooks.Items.Add(item);
             }
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (listBoxBooks.SelectedIndex < 0)
+            {
+                MessageBox.Show("Nincs kiválasztott elem");
+                return;
+            }
+            //--todo befejezni a törlést
+        }
     }
 }

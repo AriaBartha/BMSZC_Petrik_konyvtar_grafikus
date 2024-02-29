@@ -55,6 +55,7 @@
             this.buttonAdd.TabIndex = 1;
             this.buttonAdd.Text = "Új könyv hozzáadása";
             this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonUpdate
             // 
@@ -66,6 +67,7 @@
             this.buttonUpdate.TabIndex = 2;
             this.buttonUpdate.Text = "Könyv módosítása";
             this.buttonUpdate.UseVisualStyleBackColor = false;
+            this.buttonUpdate.Click += new System.EventHandler(this.buttonUpdate_Click);
             // 
             // buttonDelete
             // 
@@ -77,6 +79,7 @@
             this.buttonDelete.TabIndex = 3;
             this.buttonDelete.Text = "Könyv törlése";
             this.buttonDelete.UseVisualStyleBackColor = false;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // Form1
             // 
