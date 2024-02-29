@@ -51,16 +51,10 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
                 MessageBox.Show("Nincs kiválasztott elem");
                 return;
             }
-            buttonDelete.Click += new EventHandler(deleteBook);
-        }
-
-        private void deleteBook(object sender, EventArgs e)
-        {
             if (MessageBox.Show("Valóban törölni akarja?") == DialogResult.OK)
             {
                 Book book = (Book)listBoxBooks.SelectedItem;
                 Program.adatok.deleteBook(book);
-                //Program.books.Remove(book);
             }
         }
 
