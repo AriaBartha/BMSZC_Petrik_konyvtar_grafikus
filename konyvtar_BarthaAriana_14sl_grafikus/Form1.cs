@@ -28,12 +28,19 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-
+            FormBookMuvelet formBookMuvelet = new FormBookMuvelet("add");
+            formBookMuvelet.ShowDialog();
         }
 
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-
+            if (listBoxBooks.SelectedIndex < 0)
+            {
+                MessageBox.Show("Nincs kiválasztott elem");
+                return;
+            }
+            FormBookMuvelet formBookMuvelet = new FormBookMuvelet("edit");
+            formBookMuvelet.ShowDialog();
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

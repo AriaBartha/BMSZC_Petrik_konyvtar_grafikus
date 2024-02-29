@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBookMuvelet));
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxId = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxTitle = new System.Windows.Forms.TextBox();
             this.textBoxAuthor = new System.Windows.Forms.TextBox();
@@ -40,27 +38,11 @@
             this.nuPages = new System.Windows.Forms.NumericUpDown();
             this.label5 = new System.Windows.Forms.Label();
             this.buttonMuvelet = new System.Windows.Forms.Button();
+            this.textBoxId = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nuPublishYear)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPages)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(50, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "id";
-            // 
-            // textBoxId
-            // 
-            this.textBoxId.Location = new System.Drawing.Point(153, 48);
-            this.textBoxId.Name = "textBoxId";
-            this.textBoxId.ReadOnly = true;
-            this.textBoxId.Size = new System.Drawing.Size(100, 20);
-            this.textBoxId.TabIndex = 1;
             // 
             // label2
             // 
@@ -176,12 +158,33 @@
             this.buttonMuvelet.Text = "button1";
             this.buttonMuvelet.UseVisualStyleBackColor = true;
             // 
+            // textBoxId
+            // 
+            this.textBoxId.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.textBoxId.Location = new System.Drawing.Point(153, 60);
+            this.textBoxId.Name = "textBoxId";
+            this.textBoxId.ReadOnly = true;
+            this.textBoxId.Size = new System.Drawing.Size(75, 22);
+            this.textBoxId.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(50, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(18, 16);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "id";
+            // 
             // FormBookMuvelet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxId);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonMuvelet);
             this.Controls.Add(this.nuPages);
             this.Controls.Add(this.label5);
@@ -191,11 +194,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxTitle);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBoxId);
-            this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormBookMuvelet";
             this.Text = "FormBookMuvelet";
+            this.Load += new System.EventHandler(this.FormBookMuvelet_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nuPublishYear)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nuPages)).EndInit();
             this.ResumeLayout(false);
@@ -204,9 +206,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxId;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxTitle;
         private System.Windows.Forms.TextBox textBoxAuthor;
@@ -216,5 +215,7 @@
         private System.Windows.Forms.NumericUpDown nuPages;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonMuvelet;
+        private System.Windows.Forms.TextBox textBoxId;
+        private System.Windows.Forms.Label label1;
     }
 }

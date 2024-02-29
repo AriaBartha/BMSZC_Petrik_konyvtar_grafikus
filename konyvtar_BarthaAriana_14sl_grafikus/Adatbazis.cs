@@ -66,6 +66,75 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
             return books;
         }
 
+        internal void insertBook(Book book)
+        {
+            cmd.CommandText = "INSERT INTO `books`(`id`, `title`, `author`, `publish_year`, `page_count`) VALUES (@id, @title, @author, @publish_year, @page_count)";
+            cmd.Parameters.AddWithValue("@id", book.Id);
+            cmd.Parameters.AddWithValue("@title", book.Title);
+            cmd.Parameters.AddWithValue("@author", book.Author);
+            cmd.Parameters.AddWithValue("@publish_year", book.Publish_year);
+            cmd.Parameters.AddWithValue("@page_count", book.Page_count);
+            try
+            {
+                kapcsolatNyit();
+                cmd.ExecuteNonQuery();
+            }
+            catch(MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                kapcsolatZar();
+            }
+        }
+
+        internal void updateBook(Book book)
+        {
+           
+            cmd.CommandText = "UPDATE `books` SET `title`=@title,`author`=@author,`publish_year`=@publish_year,`page_count`=@page_count WHERE `id`=@id";
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@id", book.Id);
+            cmd.Parameters.AddWithValue("@title", book.Title);
+            cmd.Parameters.AddWithValue("@author", book.Author);
+            cmd.Parameters.AddWithValue("@publish_year", book.Publish_year);
+            cmd.Parameters.AddWithValue("@page_count", book.Page_count);
+            try
+            {
+                kapcsolatNyit();
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                kapcsolatZar();
+            }
+
+        }
+
+        internal void deleteBook(Book book)
+        {
+            cmd.CommandText = "DELETE FROM `books` WHERE `id`=@id";
+            cmd.Parameters.AddWithValue("@id", book.Id);
+
+            try
+            {
+                kapcsolatNyit();
+                cmd.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                kapcsolatZar();
+            }
+        }
+
         private void kapcsolatNyit()
         {
             if (conn.State != System.Data.ConnectionState.Open)

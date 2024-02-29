@@ -100,11 +100,10 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxBooks;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonUpdate;
         private System.Windows.Forms.Button buttonDelete;
+        public System.Windows.Forms.ListBox listBoxBooks;
     }
 }
 
