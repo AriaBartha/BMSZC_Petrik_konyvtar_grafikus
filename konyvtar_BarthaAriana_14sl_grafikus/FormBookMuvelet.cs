@@ -49,7 +49,8 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
             nuPages.Value = (int)book.Page_count;
         }
 
-        private Book createBook()
+
+        private void updateBook(object sender, EventArgs e)
         {
             Book book = new Book();
             book.Id = int.Parse(textBoxId.Text);
@@ -57,20 +58,17 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
             book.Author = textBoxAuthor.Text;
             book.Publish_year = (int)nuPublishYear.Value;
             book.Page_count = (int)nuPages.Value;
-
-            return book;
-        }
-
-        private void updateBook(object sender, EventArgs e)
-        {
-            Book book = createBook();
             Program.adatok.updateBook(book);
             this.Close();
         }
 
         private void insertBook(object sender, EventArgs e)
         {
-            Book book = createBook();
+            Book book = new Book();
+            book.Title = textBoxTitle.Text;
+            book.Author = textBoxAuthor.Text;
+            book.Publish_year = (int)nuPublishYear.Value;
+            book.Page_count = (int)nuPages.Value;
             Program.adatok.insertBook(book);
             this.Close();
         }
