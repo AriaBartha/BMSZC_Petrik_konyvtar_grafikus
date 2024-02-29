@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace konyvtar_BarthaAriana_14sl_grafikus
 {
@@ -50,7 +51,27 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
                 MessageBox.Show("Nincs kiválasztott elem");
                 return;
             }
-            //--todo befejezni a törlést
+            buttonDelete.Click += new EventHandler(deleteBook);
+        }
+
+        private void deleteBook(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Valóban törölni akarja?") == DialogResult.OK)
+            {
+                Book book = (Book)listBoxBooks.SelectedItem;
+                Program.adatok.deleteBook(book);
+                //Program.books.Remove(book);
+            }
+        }
+
+        //todo lista frissítést javítani
+        private void buttonRefresh_Click(object sender, EventArgs e)
+        {
+            listBoxBooks.Items.Clear();
+            foreach (Book item in Program.books)
+            {
+                listBoxBooks.Items.Add(item);
+            }
         }
     }
 }

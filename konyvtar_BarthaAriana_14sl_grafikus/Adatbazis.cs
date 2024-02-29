@@ -41,7 +41,7 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
         internal List<Book> getAllBooks()
         {
             List<Book> books = new List<Book>();
-            cmd.CommandText = "SELECT * FROM `books` ORDER BY `author`";
+            cmd.CommandText = "SELECT * FROM `books` ORDER BY `id`";
             try
             {
                 kapcsolatNyit();
