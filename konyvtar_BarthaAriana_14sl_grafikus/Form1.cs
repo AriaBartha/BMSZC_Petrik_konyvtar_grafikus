@@ -58,11 +58,12 @@ namespace konyvtar_BarthaAriana_14sl_grafikus
             }
         }
 
-        //todo lista frissítést javítani
+
         private void buttonRefresh_Click(object sender, EventArgs e)
         {
             listBoxBooks.Items.Clear();
-            foreach (Book item in Program.books)
+            var books = Program.adatok.getAllBooks();
+            foreach (Book item in books)
             {
                 listBoxBooks.Items.Add(item);
             }
